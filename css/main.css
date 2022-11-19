@@ -1,0 +1,399 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap');
+body {
+    font-family: "Cairo", sans-serif;
+    color: #101010;
+    background-color: #ffffff;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Cairo', Courier, monospace
+}
+
+.layout_padding {
+    padding: 75px 0;
+}
+
+.layout_padding2 {
+    padding: 45px 0;
+}
+
+.layout_padding2-top {
+    padding-top: 45px;
+}
+
+.layout_padding2-bottom {
+    padding-bottom: 45px;
+}
+
+.layout_padding-top {
+    padding-top: 75px;
+}
+
+.layout_padding-bottom {
+    padding-bottom: 75px;
+}
+
+.custom_heading {
+    position: relative;
+}
+
+
+/* head------------------------------------------------------------ */
+
+.head_area {
+    height: 98vh;
+    background-image: url(../images/1-world.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.header_section .container-fluid {
+    padding-right: 25px;
+    padding-left: 25px;
+}
+
+.custom_nav-container {
+    z-index: 99999;
+    padding: 15px 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.navbar-brand {
+    text-transform: uppercase;
+}
+
+.navbar-brand {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-right: 0;
+}
+
+.navbar-brand img {
+    width: 150px;
+}
+
+.head_section {
+    text-align: center;
+    color: #dcc4c4;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 50%;
+}
+
+.head_section h1 {
+    font-size: 85px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 70%;
+    margin: 0 auto;
+}
+
+
+/* slid------------------------------------------------------------ */
+
+.sub_page .slid_section .slid_container {
+    margin-top: 0;
+}
+
+.slid_section .slid_container {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 0px;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: -150px;
+}
+
+.slid_section .slid_container .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+
+/* about------------------------------------------------------------ */
+
+.about_section .about_container .img_box {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.about_section .about_container .img_box img {
+    width: 100%;
+}
+
+.about_section a {
+    display: inline-block;
+    padding: 14px 35px;
+    background-color: transparent;
+    border: 1.5px solid #00ff00;
+    color: #00ff00;
+    color: #3cff3c;
+}
+
+.about_section a:hover {
+    background-color: #00ff00;
+    color: #ffffff;
+}
+
+
+/* show----------------------------------------------------------------- */
+
+.show_section .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    align-self: center;
+}
+
+.show_section .img-box {
+    margin: 1%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+}
+
+.show_section .img-box.box-1,
+.show_section .img-box.box-3 {
+    width: 43%;
+}
+
+.show_section .img-box.box-2,
+.show_section .img-box.box-4 {
+    width: 53%;
+}
+
+.show_section a {
+    display: inline-block;
+    padding: 14px 35px;
+    background-color: transparent;
+    border: 1.5px solid #00ff00;
+    color: #00ff00;
+    color: #3cff3c;
+}
+
+.show_section a:hover {
+    background-color: #00ff00;
+    color: #ffffff;
+}
+
+
+/* life----------------------------------------------------------------- */
+
+.life_section {
+    background: url(../images/life.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+/* slaid2----------------------------------------------------------------- */
+
+.slaid2_section .slaid2_container {
+    width: 90%;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.slaid2_section .img_box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    min-width: 225px;
+    min-height: 225px;
+    border-radius: 100%;
+    background: -webkit-gradient(linear, left top, right top, from(#78c535), to(#0D4800));
+    background: linear-gradient(to right, #78c535, #0D4800);
+    margin-right: 15px;
+}
+
+.slaid2_section .img_box img {
+    width: 75%;
+    border-radius: 100%;
+}
+
+.slaid2_section .detail_box {
+    padding: 25px;
+    background: -webkit-gradient(linear, left top, left bottom, from(#78c535), to(#0D4800));
+    background: linear-gradient(to bottom, #0D4800, #78c535);
+    color: #ffffff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    min-height: 270px;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.slaid2_section .detail_box h5 {
+    font-weight: bold;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-right: 35px;
+}
+
+.slaid2_section .carousel-indicators {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    width: 90%;
+    margin: 0 auto;
+    bottom: 30px;
+}
+
+.slaid2_section .carousel-indicators li {
+    background-color: #0f0f0f;
+    margin: 0;
+    height: 15px;
+    width: 35px;
+    opacity: 1;
+}
+
+.slaid2_section .carousel-indicators li.active {
+    background-color: #46a102;
+}
+
+
+/* ---------------------------------------------------------------------------------- */
+
+.info_section {
+    background-image: url(../images/info-bg.png);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.info_items {
+    width: 65%;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.info_items .item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.info_items .item .img-box {
+    width: 50px;
+    border-radius: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 15px;
+}
+
+.info_items .item .img-box img {
+    width: 100%;
+}
+
+.info_items .item .detail-box {
+    margin-top: 10px;
+    color: rgb(64, 60, 60);
+}
+
+.info_items {
+    position: relative;
+}
+
+.info_items a {
+    position: relative;
+    text-decoration: none;
+}
+
+.info_items .item .detail-box:hover {
+    color: rgb(245, 233, 233);
+}
+
+
+/* footer section*/
+
+.footer_section {
+    background-color: #ffffff;
+    padding: 20px;
+    font-weight: 500;
+}
+
+.footer_section p {
+    color: #292929;
+    margin: 0;
+    text-align: center;
+}
+
+
+/* end footer section*/

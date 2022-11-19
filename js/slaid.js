@@ -1,4 +1,4 @@
-jQuery(document).ready(function($){
+jQuery(document).ready(function($) {
     var dragging = false,
         scrolling = false,
         resizing = false;
@@ -7,35 +7,33 @@ jQuery(document).ready(function($){
     //check if the .cd-image-container is in the viewport 
     //if yes, animate it
     checkPosition(imageComparisonContainers);
-    $(window).on('scroll', function(){
-        if( !scrolling) {
-            scrolling =  true;
-            ( !window.requestAnimationFrame )
-                ? setTimeout(function(){checkPosition(imageComparisonContainers);}, 100)
-                : requestAnimationFrame(function(){checkPosition(imageComparisonContainers);});
+    $(window).on('scroll', function() {
+        if (!scrolling) {
+            scrolling = true;
+            (!window.requestAnimationFrame) ?
+            setTimeout(function() { checkPosition(imageComparisonContainers); }, 100): requestAnimationFrame(function() { checkPosition(imageComparisonContainers); });
         }
     });
-    
+
     //make the .cd-handle element draggable and modify .cd-resize-img width according to its position
-    imageComparisonContainers.each(function(){
+    imageComparisonContainers.each(function() {
         var actual = $(this);
         drags(actual.find('.cd-handle'), actual.find('.cd-resize-img'), actual, actual.find('.cd-image-label[data-type="original"]'), actual.find('.cd-image-label[data-type="modified"]'));
     });
 
     //upadate images label visibility
-    $(window).on('resize', function(){
-        if( !resizing) {
-            resizing =  true;
-            ( !window.requestAnimationFrame )
-                ? setTimeout(function(){checkLabel(imageComparisonContainers);}, 100)
-                : requestAnimationFrame(function(){checkLabel(imageComparisonContainers);});
+    $(window).on('resize', function() {
+        if (!resizing) {
+            resizing = true;
+            (!window.requestAnimationFrame) ?
+            setTimeout(function() { checkLabel(imageComparisonContainers); }, 100): requestAnimationFrame(function() { checkLabel(imageComparisonContainers); });
         }
     });
 
     function checkPosition(container) {
-        container.each(function(){
+        container.each(function() {
             var actualContainer = $(this);
-            if( $(window).scrollTop() + $(window).height()*0.5 > actualContainer.offset().top) {
+            if ($(window).scrollTop() + $(window).height() * 0.5 > actualContainer.offset().top) {
                 actualContainer.addClass('is-visible');
             }
         });
@@ -44,7 +42,7 @@ jQuery(document).ready(function($){
     }
 
     function checkLabel(container) {
-        container.each(function(){
+        container.each(function() {
             var actual = $(this);
             updateLabel(actual.find('.cd-image-label[data-type="modified"]'), actual.find('.cd-resize-img'), 'left');
             updateLabel(actual.find('.cd-image-label[data-type="original"]'), actual.find('.cd-resize-img'), 'right');
@@ -65,15 +63,14 @@ jQuery(document).ready(function($){
                 containerWidth = container.outerWidth(),
                 minLeft = containerOffset + 10,
                 maxLeft = containerOffset + containerWidth - dragWidth - 10;
-            
+
             dragElement.parents().on("mousemove vmousemove", function(e) {
-                if( !dragging) {
-                    dragging =  true;
-                    ( !window.requestAnimationFrame )
-                        ? setTimeout(function(){animateDraggedHandle(e, xPosition, dragWidth, minLeft, maxLeft, containerOffset, containerWidth, resizeElement, labelContainer, labelResizeElement);}, 100)
-                        : requestAnimationFrame(function(){animateDraggedHandle(e, xPosition, dragWidth, minLeft, maxLeft, containerOffset, containerWidth, resizeElement, labelContainer, labelResizeElement);});
+                if (!dragging) {
+                    dragging = true;
+                    (!window.requestAnimationFrame) ?
+                    setTimeout(function() { animateDraggedHandle(e, xPosition, dragWidth, minLeft, maxLeft, containerOffset, containerWidth, resizeElement, labelContainer, labelResizeElement); }, 100): requestAnimationFrame(function() { animateDraggedHandle(e, xPosition, dragWidth, minLeft, maxLeft, containerOffset, containerWidth, resizeElement, labelContainer, labelResizeElement); });
                 }
-            }).on("mouseup vmouseup", function(e){
+            }).on("mouseup vmouseup", function(e) {
                 dragElement.removeClass('draggable');
                 resizeElement.removeClass('resizable');
             });
@@ -85,33 +82,89 @@ jQuery(document).ready(function($){
     }
 
     function animateDraggedHandle(e, xPosition, dragWidth, minLeft, maxLeft, containerOffset, containerWidth, resizeElement, labelContainer, labelResizeElement) {
-        var leftValue = e.pageX + xPosition - dragWidth;   
+        var leftValue = e.pageX + xPosition - dragWidth;
         //constrain the draggable element to move inside his container
-        if(leftValue < minLeft ) {
+        if (leftValue < minLeft) {
             leftValue = minLeft;
-        } else if ( leftValue > maxLeft) {
+        } else if (leftValue > maxLeft) {
             leftValue = maxLeft;
         }
 
-        var widthValue = (leftValue + dragWidth/2 - containerOffset)*100/containerWidth+'%';
-        
+        var widthValue = (leftValue + dragWidth / 2 - containerOffset) * 100 / containerWidth + '%';
+
         $('.draggable').css('left', widthValue).on("mouseup vmouseup", function() {
             $(this).removeClass('draggable');
             resizeElement.removeClass('resizable');
         });
 
-        $('.resizable').css('width', widthValue); 
+        $('.resizable').css('width', widthValue);
 
         updateLabel(labelResizeElement, resizeElement, 'left');
         updateLabel(labelContainer, resizeElement, 'right');
-        dragging =  false;
+        dragging = false;
     }
 
     function updateLabel(label, resizeElement, position) {
-        if(position == 'left') {
-            ( label.offset().left + label.outerWidth() < resizeElement.offset().left + resizeElement.outerWidth() ) ? label.removeClass('is-hidden') : label.addClass('is-hidden') ;
+        if (position == 'left') {
+            (label.offset().left + label.outerWidth() < resizeElement.offset().left + resizeElement.outerWidth()) ? label.removeClass('is-hidden'): label.addClass('is-hidden');
         } else {
-            ( label.offset().left > resizeElement.offset().left + resizeElement.outerWidth() ) ? label.removeClass('is-hidden') : label.addClass('is-hidden') ;
+            (label.offset().left > resizeElement.offset().left + resizeElement.outerWidth()) ? label.removeClass('is-hidden'): label.addClass('is-hidden');
         }
     }
+});
+
+// home--------------------------------------------------------------------------------
+
+const header = document.querySelector("header");
+const sectionOne = document.querySelector(".home-intro");
+
+const faders = document.querySelectorAll(".fade-in");
+const sliders = document.querySelectorAll(".slide-in");
+
+const sectionOneOptions = {
+    rootMargin: "-200px 0px 0px 0px"
+};
+
+const sectionOneObserver = new IntersectionObserver(function(
+        entries,
+        sectionOneObserver
+    ) {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                header.classList.add("nav-scrolled");
+            } else {
+                header.classList.remove("nav-scrolled");
+            }
+        });
+    },
+    sectionOneOptions);
+
+sectionOneObserver.observe(sectionOne);
+
+const appearOptions = {
+    threshold: 0,
+    rootMargin: "0px 0px -250px 0px"
+};
+
+const appearOnScroll = new IntersectionObserver(function(
+        entries,
+        appearOnScroll
+    ) {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                return;
+            } else {
+                entry.target.classList.add("appear");
+                appearOnScroll.unobserve(entry.target);
+            }
+        });
+    },
+    appearOptions);
+
+faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+});
+
+sliders.forEach(slider => {
+    appearOnScroll.observe(slider);
 });

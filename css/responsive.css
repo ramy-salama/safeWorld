@@ -1,5 +1,11 @@
 @media (max-width: 1120px) {
+    .life_section {
+        background-repeat: round;
+        height: 200px;
+    }
     .head_area {
+        background-repeat: round;
+        background-attachment: scroll;
         height: auto;
     }
     .head_btn-box {
@@ -8,6 +14,9 @@
 }
 
 @media (max-width: 992px) {
+    .more-stuff-grid {
+        grid-template-columns: minmax(1em, 1fr) repeat(2, minmax(200px, 400px)) minmax( 1em, 3fr);
+    }
     .custom_nav-container {
         flex-direction: row;
     }
@@ -17,6 +26,11 @@
 }
 
 @media (max-width: 768px) {
+    .slaid2_section .detail_box {
+        color: #000;
+        max-height: 300px;
+        overflow: auto;
+    }
     .slid_section .slid_container .container {
         flex-direction: column;
     }
@@ -45,6 +59,12 @@
 }
 
 @media (max-width: 576px) {
+    .slaid2_section .img_box {
+        display: none;
+    }
+    .more-stuff-grid {
+        grid-template-columns: minmax(1em, 1fr) repeat(2, minmax(300px, 500px)) minmax( 1em, 3fr);
+    }
     .head_section h1 {
         font-size: 58px;
     }
@@ -73,7 +93,7 @@
         flex-direction: row;
     }
     .head_area {
-        height: 45vh;
+        height: 51vh;
     }
 }
 
@@ -84,6 +104,9 @@
 }
 
 @media (max-width: 420px) {
+    .head_area {
+        height: 55vh;
+    }
     .more-stuff-grid {
         grid-gap: .5em;
     }
